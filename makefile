@@ -6,7 +6,7 @@
 #    By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 17:46:37 by nchennaf          #+#    #+#              #
-#    Updated: 2021/10/15 11:04:06 by nchennaf         ###   ########.fr        #
+#    Updated: 2021/10/18 17:10:34 by nchennaf         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,9 @@ SRC = ft_isalpha.c \
 	  ft_bzero.c \
 	  ft_memcpy.c \
 	  ft_memmove.c \
+	  ft_toupper.c \
+	  ft_tolower.c \
+	  ft_atoi.c \
 
 OBJ = ${SRC:.c=.o}
 
@@ -38,4 +41,9 @@ ${NAME}: ${OBJ}
 clean:
 	rm -rf *.o
 
-.PHONY: all clean
+fclean: clean
+	rm -rf ${NAME}
+	
+re: fclean all
+
+.PHONY: all clean fclean

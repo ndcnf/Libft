@@ -6,7 +6,7 @@
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:59:26 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/10/15 16:03:11 by nchennaf         ###   ########.fr       */
+/*   Updated: 2021/10/18 15:42:59 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		i++;
 	}
 
-
 	//THE LAST RETURN
 	return (ptr_dst);
-	
-
 }
