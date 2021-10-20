@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   m_ft_strchr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 11:41:13 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/10/20 14:52:11 by nchennaf         ###   ########.fr       */
+/*   Created: 2021/10/19 13:51:39 by nchennaf          #+#    #+#             */
+/*   Updated: 2021/10/19 14:11:22 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include "../ft_strchr.c"
+#include <string.h>
 
-size_t	strlcat(char *dst, const char *src, size_t dstsize)
+int	main()
 {
-	
+
 }

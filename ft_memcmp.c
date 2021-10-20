@@ -1,43 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 10:59:26 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/10/19 13:37:14 by nchennaf         ###   ########.fr       */
+/*   Created: 2021/10/19 16:52:56 by nchennaf          #+#    #+#             */
+/*   Updated: 2021/10/19 18:26:43 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*ptr_src;
-	char	*ptr_dst;
 	size_t	i;
+	unsigned char	*ptr_s1;
+	unsigned char	*ptr_s2;
 
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	ptr_src = (char *)src;
-	ptr_dst = (char *)dst;
-	if (ptr_dst > ptr_src)
+	ptr_s1 = (unsigned char *)s1;
+	ptr_s2 = (unsigned char *)s2;
+	i = 0;
+	while ((ptr_s1[i] && ptr_s2[i]) && i < n)
 	{
-		while (len > 0)
-		{
-			ptr_dst[len - 1] = ptr_src[len - 1];
-			len--;
-		}
+		if (ptr_s1[i] == ptr_s2[i])
+			;
+		else if ((ptr_s1[i] > ptr_s2[i]) || (ptr_s1[i] < ptr_s2[i]))
+			return (ptr_s1 - ptr_s2);
+		i++;
 	}
-	else
-	{
-		i = 0;
-		while (i < len)
-		{
-			ptr_dst[i] = ptr_src[i];
-			i++;
-		}
-	}
-	return (ptr_dst);
+	return (0);
 }

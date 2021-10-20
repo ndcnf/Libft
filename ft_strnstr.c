@@ -1,43 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 10:59:26 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/10/19 13:37:14 by nchennaf         ###   ########.fr       */
+/*   Created: 2021/10/20 14:36:49 by nchennaf          #+#    #+#             */
+/*   Updated: 2021/10/20 14:54:18 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	*ptr_src;
-	char	*ptr_dst;
-	size_t	i;
-
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	ptr_src = (char *)src;
-	ptr_dst = (char *)dst;
-	if (ptr_dst > ptr_src)
-	{
-		while (len > 0)
-		{
-			ptr_dst[len - 1] = ptr_src[len - 1];
-			len--;
-		}
-	}
-	else
-	{
-		i = 0;
-		while (i < len)
-		{
-			ptr_dst[i] = ptr_src[i];
-			i++;
-		}
-	}
-	return (ptr_dst);
+	(void)haystack;
+	(void)needle;
+	(void)len;
 }

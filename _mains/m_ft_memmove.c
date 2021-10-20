@@ -6,7 +6,7 @@
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 11:31:08 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/10/15 14:53:25 by nchennaf         ###   ########.fr       */
+/*   Updated: 2021/10/19 13:25:08 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 int	main()
 {
-	char	str[] = "ABCDEF";
+	char	str[] = "Pokemon vert feuille";
 	size_t	len;	
 
-	len = sizeof(char)*6;
+	len = sizeof(char)*20;
 
 	printf("str %s\n", str);
-	ft_memmove(str, str + 2, len);
+	memmove(str, str + 4, 50);
 	printf("Nouveau str %s\n", str);
 }

@@ -1,43 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 10:59:26 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/10/19 13:37:14 by nchennaf         ###   ########.fr       */
+/*   Created: 2021/10/20 14:37:21 by nchennaf          #+#    #+#             */
+/*   Updated: 2021/10/20 14:51:59 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+size_t	ft_strlcpy(char *dst, const char * src, size_t dstsize)
 {
-	char	*ptr_src;
-	char	*ptr_dst;
-	size_t	i;
 
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	ptr_src = (char *)src;
-	ptr_dst = (char *)dst;
-	if (ptr_dst > ptr_src)
-	{
-		while (len > 0)
-		{
-			ptr_dst[len - 1] = ptr_src[len - 1];
-			len--;
-		}
-	}
-	else
-	{
-		i = 0;
-		while (i < len)
-		{
-			ptr_dst[i] = ptr_src[i];
-			i++;
-		}
-	}
-	return (ptr_dst);
 }
