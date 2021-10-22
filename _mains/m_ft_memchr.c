@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   m_ft_memchr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/20 14:36:02 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/10/22 13:21:18 by nchennaf         ###   ########.fr       */
+/*   Created: 2021/10/22 10:28:38 by nchennaf          #+#    #+#             */
+/*   Updated: 2021/10/22 11:47:43 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <string.h>
+#include "../ft_memchr.c"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int main(int argc, const char * argv[])
 {
-	size_t	i;
-	char	*ptr_s;
+    char search[] = "TechOnTheNet";
 
-	i = 0;
-	ptr_s = (char *)s;
-	if (n == 0)
-		return (NULL);
-	while (i < n)
-	{
-		if (ptr_s[i] == c)
-			return ((char *)&ptr_s[i]);
-		i++;
-	}
-	return (NULL);
+    printf("FT : %s\n\n\n\n\n", (ft_memchr(search, 'N', strlen(search))));
+    printf("OG : %s\n\n\n\n\n", (memchr(search, 'N', strlen(search))));
+    return 0;
 }
+
