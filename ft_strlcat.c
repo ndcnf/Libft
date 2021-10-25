@@ -6,7 +6,7 @@
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:41:13 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/10/22 17:18:14 by nchennaf         ###   ########.fr       */
+/*   Updated: 2021/10/25 16:53:28 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,30 @@ EXAMPLE:
 return ;
 *-----------------------------------------------------------------------*/
 
-
-size_t	strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
-	char	*ptr_src;
-	char	*buffer;
-
-	i = 0;
-	ptr_src = (char *)src;
-	buffer = (char *)src;
-	if (dstsize == 0)
-		return (ft_strlen(ptr_src));
-	while (ptr_src[i] && dst[i] && i < (dstsize - ft_strlen(dst) - 1))
-		i++;
+	size_t	j;
+	size_t	dst_len;
+	size_t	src_len;
 	
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen((char *)src);
+	i = dst_len;
+	j = 0;
 
+	if (dstsize == 0)
+		return (src_len);
+
+	if (dstsize < dst_len)
+		return (dstsize + src_len);
+	
+	while (src[j] && (i < (dstsize - 1)))
+	{
+		dst[i] = src[j];
+		i++;
+		j++;
+	}
+	dst[i] = '\0';
+	return (src_len + dst_len);
 }
