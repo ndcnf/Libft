@@ -6,7 +6,7 @@
 #    By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 17:46:37 by nchennaf          #+#    #+#              #
-#    Updated: 2021/10/22 17:06:16 by nchennaf         ###   ########.fr        #
+#    Updated: 2021/10/27 16:30:36 by nchennaf         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,9 +34,9 @@ SRC = ft_isalpha.c \
 	  ft_memchr.c \
 	  ft_strlcpy.c \
 	  ft_strlcat.c \
-	 # ft_strnstr.c \
+	  ft_strnstr.c \
 	  ft_calloc.c \
-	  ft_strdup.c \ 
+	  ft_strdup.c 
 
 OBJ = ${SRC:.c=.o}
 

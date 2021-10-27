@@ -6,11 +6,12 @@
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 12:22:35 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/10/25 15:59:58 by nchennaf         ###   ########.fr       */
+/*   Updated: 2021/10/27 10:38:19 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include 	<stddef.h>
+#include <stddef.h>
+#include <stdlib.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
