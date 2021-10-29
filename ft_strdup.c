@@ -14,84 +14,21 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char	*ptr_s;
-	char	*ptr_m;
 	char	*buffer;
-	int		i;
-
+	size_t	i;
+	size_t	len;
+	
 	i = 0;
-	ptr_m = (char *)malloc((ft_strlen((char *)s1) * sizeof(char *) + 1));
-	ptr_s = (char *)s1;
-	buffer = ptr_s;
-	if (ptr_m == NULL)
-		return (0);
-	while (ptr_s[i] && buffer[i])
+	len = ft_strlen((char *)s1);
+	buffer = (char *)malloc(sizeof(char) * (len + 1));
+	if (buffer == NULL)
+		return (NULL);
+
+	while (s1[i])
 	{
-		buffer[i] = ptr_s[i];
+		buffer[i] = s1[i];
 		i++;
 	}
-
 	buffer[i] = '\0';
-	return (0);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*	
-	int		i;
-	char	*sum;
-	char	*ptr_s;
-
-	i = 0;
-	ptr_s = (char *)s1;
-	sum = (int)malloc(ft_strlen((char *)s1) + 1);
-	if (sum == 0)
-		return (0);
-	
-	while (ptr_s[i])
-	{
-	i++;	
-	}
-	ptr_s[i] = '\0';
-	return (0);
-
-	*/
+	return (buffer);
 }
