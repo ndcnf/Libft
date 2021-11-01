@@ -17,81 +17,69 @@
  * ____________________________________________________*/
  
 #include "libft.h"
-#include <stdio.h>
+
+char *first(char *str, char *c)
+{
+	int	i;
+	int	j;
+	
+	i = 0;
+	while (str[i])
+	{
+		j = 0;
+		while (str[i] != c[j] && c[j])
+			j++;
+		if (!c[j])
+			return (&str[i]);
+		else
+			i++;
+	}
+	return (0);
+}
+
+char *last(char *str, char *c)
+{
+	int	i;
+	int	j;
+
+	i = (ft_strlen(str) - 1);
+	while (i >= 0)
+	{
+		j = 0;
+		while (str[i] != c[j] && c[j])
+			j++;
+		if (!c[j])
+			return (&str[i]);
+		else
+			i--;
+	}
+	return (0);
+}
 
 char *ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	j;
+	char	*lean;
 	char	*bgn;
 	char	*end;
+	int	i;
 
+	if (s1 == NULL)
+		return (NULL);
+	if (set == NULL)
+		return (ft_strdup(s1));
+	bgn = first((char *)s1, (char *)set);
+	end = last((char *)s1, (char *)set);
+	if (!bgn && !end)
+		return ("");
+	lean = (char *)malloc(sizeof(char) * (end - bgn + 2));
+	if (lean == NULL)
+		return (NULL);
 	i = 0;
-	j = 0;
-	while (s1[i])
+	while (i < end - bgn + 1)
 	{
-		while (s1[i] == set[j])
-		{
-			j++;
-		}
-		bgn = s1[i];
+		lean[i] = bgn[i];
 		i++;
 	}
-	i = ft_strlen(s1);
-	j = ft_strlen(s1);;
-	while (i != 0)
-	{
-		while (s1[i] == set[j])
-			j--;
-		end = s1[i];
-		i++;
-	}
-
-
-
-	/*char *ft_strtrim(char const *s1, char const *set)
-{
-    size_t    i;
-    size_t    j;
-    size_t    k;
-    char    bgn;
-    char    end;
-    char    *lean;
-
-    i = 0;
-    j = 0;
-    k = 0;
-    while (s1[i])
-    {
-        while (s1[i] == set[j])
-            j++;
-        lean[k] = s1[i];
-        i++;
-        k++;
-    }
-    bgn = s1[i];
-    
-    i = strlen(s1);
-    j = strlen(s1);
-    while (i != 0)
-    {
-        while (s1[i] == set[j])
-            j--;
-        lean[k] = s1[i];
-        i--;
-        k++;
-    }
-    end = s1[i];
-}
-	 *
-	 *
-	 *
-	 */
-
-/*
-	{
-		printf("boucle : %s\n", ft_strrchr(s1, (int)set[i]));
-		i++;
-	}
-*/
+	lean[i] = '\0';
+	return (lean);
 }
