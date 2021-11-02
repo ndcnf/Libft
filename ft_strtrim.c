@@ -6,23 +6,23 @@
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:56:04 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/10/31 18:49:26 by nchennaf         ###   ########.fr       */
+/*   Updated: 2021/11/02 17:02:49 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /* Example:
  * s1		"....,.,,..,,,.,Hell,,.,.,o.,.,.,,.,."
  * set		".,"
  * return:	"Hell,,.,.,o"
  * ____________________________________________________*/
- 
-#include "libft.h"
 
-char *first(char *str, char *c)
+static char	*first(char *str, char *c)
 {
 	int	i;
 	int	j;
-	
+
 	i = 0;
 	while (str[i])
 	{
@@ -37,7 +37,7 @@ char *first(char *str, char *c)
 	return (0);
 }
 
-char *last(char *str, char *c)
+static char	*last(char *str, char *c)
 {
 	int	i;
 	int	j;
@@ -56,12 +56,12 @@ char *last(char *str, char *c)
 	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*lean;
 	char	*bgn;
 	char	*end;
-	int	i;
+	int		i;
 
 	if (s1 == NULL)
 		return (NULL);

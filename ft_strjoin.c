@@ -6,13 +6,13 @@
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:30:02 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/10/29 13:55:42 by nchennaf         ###   ########.fr       */
+/*   Updated: 2021/11/02 17:05:28 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*s3;
 	size_t	s1_len;
