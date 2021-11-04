@@ -1,0 +1,29 @@
+char	*ft_itoa(int n)
+{
+	int	i;
+	int	sign;
+	char	*nbr;
+	int	count;
+	int	n_val;
+
+	i = 0;
+	sign = 0;
+	count = 0;
+	n_val = n;
+	if (n < 0)
+	{
+		sign = -1;
+		n_val = -n;
+	}
+	else if (n >= 0)
+		sign = 1;
+	else
+		sign = 0; // what the hell? Return NULL?
+	while (n_val >= 0)
+	{
+		nbr = n_val / 10;
+		count++;	
+	}
+	return (nbr);
+}	
+

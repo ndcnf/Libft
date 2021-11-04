@@ -18,7 +18,9 @@
  * return	"Everything", "needs", "a", "delimiter.", NULL
  * ------------------------------------------------------------*/
 
-/* Returns the number of strings in the string s*/
+/* This function returns the number of words (strings) in
+the string s */
+
 static int	word_cnt(char *s, char c)
 {
 	int	i;
@@ -42,109 +44,76 @@ static int	word_cnt(char *s, char c)
 	return (cnt);
 }
 
-static void	*new_str(char *dst, char *src, char c)
-{
-	int		i;
+/* This function retrieves the string without any delimiter.
+It will be used with pointers with the function ft_split to
+know where every word begins and ends. */
 
-	i = 0;
-	if ()
-
-
-
-
-	i = 0;
-	word = s;
-	while (s[i])
-	{
-		cnt = 0;
-		if (s[i] == c)
-			 cnt = 0;
-		else
-		{
-			word++;
-			cnt++;
-		}
-		i++;
-	}
-	return (word);
-
-
-
-
-
-
-
-	word_cnt((char *)s, c);
-
-}
-
-/*
-static char *first(char *str, char *c)
+static char	*words_without_borders(char *s, char c)
 {
 	int	i;
-	int	j;
+	int	w_len;
+	char	*ptr;
 
 	i = 0;
-	while (str[i])
+	w_len = 0;
+	while (s[w_len] != c && s[w_len])
+		w_len++;
+	ptr = (char *)malloc(sizeof(char) * (w_len + 1));
+	if (ptr == NULL)
+		return (NULL);
+	while (i < w_len)
 	{
-		j = 0;
-		while (str[i] != c[j] && c[j])
-			j++;
-		if (!c[j])
-			return (&str[i]);
-		else
-			i++;
+		ptr[i] = s[i];
+		i++;
 	}
-	return (0);
+	ptr[i] = '\0';
+	return (ptr);
 }
 
-*/
+/* This function will detect every valid delimiter and truncate
+the string. Pointers will then know where every word begins. */
+
+static void	*new_str(char *s, char c, int w_cnt)
+{
+	int	i;
+	int	p;
+
+	i = 0;
+	p = i - 1;
+	while (s[i])
+	{
+		if ((s[i] != c && s[p] == c && i > 0) || (w_cnt == 0 && s[i] != c))
+			return ((char *)&s[i]);
+		i++;
+	}
+	return ((char *)s);
+}
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		j;
-	size_t	**ptr;
-	char	*lean;
-	int		cnt;
+	int	i;
+	char	**lean;
+	int	w_cnt;
+	char	*str;
 
 	i = 0;
-	j = 0;
-
+	str = (char *)s;
 	if (!s)
 		return (NULL);
-	if (c == NULL)
-		return (s);
-
-	cnt = word_cnt((char *)s, c);
-	ptr = malloc(sizeof(char) * cnt + 2);
-
-
-
-	return (0);
+	if (c == 0)
+		return ((char **)s);
+	w_cnt = word_cnt(str, c);
+	lean = (char **)malloc(sizeof(char *) * (w_cnt + 1));
+	if (lean == NULL)
+		return (NULL);
+	while (i < w_cnt)
+	{
+		str = new_str(str, c, w_cnt);
+		lean[i] = words_without_borders(str, c);
+		if (lean[i] == NULL)
+			return (NULL);
+		i++;
+	}
+	lean[i] = NULL;
+	return (lean);
 }
-
-// 1 Compter le bon nombre de mots et allouer le bon nombre de chaine de caracteres
-// Prevoir les cas de caracteres multiples, aucun caractere, uniquement des separateurs, avant le premier mot ou apres le dernier
-// Si char multiples: on incremente et on osef
-// Si pas de char: on retourne s ?
-// Si uniquement des separateurs: on retourne s ??
-// Si avant le premier: osef, on passe
-// Si apres le dernier mot: osef, on passe
-//// Déterminer le nombre de chaînes de caractères à créer : boucler sur c + 2
-//// Faire une malloc sur ce nombre et l'allouer a un tableau de tableau
-// Faire une malloc sur le nombre de caracteres que prendra chaque tableau (la valeur sera differente selon les strings)
-// free ? (peut-etre inutile) d'autant plus que les tableaux liberes doivent etre renvoyes. Se renseigner, mais passe sans.
-//
-// 2 Attribuer un tableau par chaine de caracteres (dispatcher)
-// Boucler tant que s n'est pas termine
-// Recopier la fonction first dans ft_strtrim pour avoir le premier caractere (!c)
-// Longeur du mot a determiner pour chacun
-// On connait donc la valeur de chaque mot. On malloc chacun de maniere individuelle.
-// (Chercher le délimiteur avec ft_strchr dans cette boucle tant que le nombre de c != 0)
-// (Tant que c[i] == s[i], on incremente)
-// Des qu'on rencontre un c, ajouter le /0 et retourner la valeur a la chaine de caractere
-// Revenir tant que s n'est pas termine
-// Renvoyer la valeur NULL en dernier (derniere string) quand s == '\0'
-// 
-// 3 
