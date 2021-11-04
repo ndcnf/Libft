@@ -45,9 +45,9 @@ SRC = ft_isalpha.c \
 	ft_split.c \
 	ft_strjoin.c \
 	ft_itoa.c \
-	#ft_substr.c \
+	ft_substr.c \
 	ft_strmapi.c \
-	ft_striteri.c \ 
+	#ft_striteri.c \ 
 
 OBJ = ${SRC:.c=.o}
 
