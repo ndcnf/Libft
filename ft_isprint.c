@@ -6,9 +6,11 @@
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 10:32:42 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/10/12 10:43:33 by nchennaf         ###   ########.fr       */
+/*   Updated: 2021/11/05 20:33:29 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

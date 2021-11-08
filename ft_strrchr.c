@@ -6,7 +6,7 @@
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 15:37:58 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/11/02 16:56:52 by nchennaf         ###   ########.fr       */
+/*   Updated: 2021/11/05 20:56:49 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 		i++;
 	while (i >= 0)
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			return ((char *)&s[i]);
 		i--;
 	}

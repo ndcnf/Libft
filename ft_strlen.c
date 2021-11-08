@@ -6,13 +6,13 @@
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 10:44:23 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/10/14 18:35:34 by nchennaf         ###   ########.fr       */
+/*   Updated: 2021/11/05 10:46:12 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 

@@ -6,7 +6,7 @@
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:56:04 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/11/02 17:02:49 by nchennaf         ###   ########.fr       */
+/*   Updated: 2021/11/05 12:24:03 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	bgn = first((char *)s1, (char *)set);
 	end = last((char *)s1, (char *)set);
 	if (!bgn && !end)
-		return ("");
+		return (ft_strdup(""));
 	lean = (char *)malloc(sizeof(char) * (end - bgn + 2));
 	if (lean == NULL)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:41:13 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/11/02 16:59:07 by nchennaf         ###   ########.fr       */
+/*   Updated: 2021/11/05 20:31:28 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,6 @@ strlcat() appends string src to the end of dst.
 It will append at most (dstsize - (strlen(dst) - 1)) characters.
 It will then NUL-terminate, unless dstsize is 0 or the original dst string
 was longer than dstsize.
-
-EXAMPLE:
-
-*src	A	B	C	D	\0
-*dst	E	F	G	H	\0
-
-return ;
 *-----------------------------------------------------------------------*/
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)

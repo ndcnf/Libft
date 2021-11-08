@@ -6,7 +6,7 @@
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 10:59:26 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/11/02 16:47:26 by nchennaf         ###   ########.fr       */
+/*   Updated: 2021/11/05 19:28:27 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	ptr_dst = (char *)dst;
 	if (ptr_dst > ptr_src)
 	{
-		while (len > 0)
-		{
-			ptr_dst[len - 1] = ptr_src[len - 1];
-			len--;
-		}
+		while (len-- > 0)
+			ptr_dst[len] = ptr_src[len];
 	}
 	else
 	{

@@ -6,9 +6,10 @@
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:48:35 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/10/14 16:34:46 by nchennaf         ###   ########.fr       */
+/*   Updated: 2021/11/05 20:34:08 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)

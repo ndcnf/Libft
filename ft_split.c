@@ -6,7 +6,7 @@
 /*   By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 14:44:45 by nchennaf          #+#    #+#             */
-/*   Updated: 2021/11/02 18:02:07 by nchennaf         ###   ########.fr       */
+/*   Updated: 2021/11/05 19:45:33 by nchennaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	word_cnt(char *s, char c)
 	int	i;
 	int	is_word;
 	int	cnt;
-	
+
 	i = 0;
 	is_word = 0;
 	cnt = 0;
@@ -50,8 +50,8 @@ know where every word begins and ends. */
 
 static char	*words_without_borders(char *s, char c)
 {
-	int	i;
-	int	w_len;
+	int		i;
+	int		w_len;
 	char	*ptr;
 
 	i = 0;
@@ -73,15 +73,17 @@ static char	*words_without_borders(char *s, char c)
 /* This function will detect every valid delimiter and truncate
 the string. Pointers will then know where every word begins. */
 
-static void	*new_str(char *s, char c, int w_cnt)
+static void	*new_str(char *s, char c, int w_cnt, int toggle)
 {
 	int	i;
 	int	p;
 
 	i = 0;
-	p = i - 1;
 	while (s[i])
 	{
+		p = i - 1;
+		if (s[0] != c && toggle == 0)
+			return ((char *)&s[0]);
 		if ((s[i] != c && s[p] == c && i > 0) || (w_cnt == 0 && s[i] != c))
 			return ((char *)&s[i]);
 		i++;
@@ -91,24 +93,22 @@ static void	*new_str(char *s, char c, int w_cnt)
 
 char	**ft_split(char const *s, char c)
 {
-	int	i;
+	int		i;
 	char	**lean;
-	int	w_cnt;
+	int		w_cnt;
 	char	*str;
 
 	i = 0;
-	str = (char *)s;
 	if (!s)
 		return (NULL);
-	if (c == 0)
-		return ((char **)s);
+	str = (char *)s;
 	w_cnt = word_cnt(str, c);
 	lean = (char **)malloc(sizeof(char *) * (w_cnt + 1));
 	if (lean == NULL)
 		return (NULL);
 	while (i < w_cnt)
 	{
-		str = new_str(str, c, w_cnt);
+		str = new_str(str, c, w_cnt, i);
 		lean[i] = words_without_borders(str, c);
 		if (lean[i] == NULL)
 			return (NULL);
