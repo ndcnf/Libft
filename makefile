@@ -6,7 +6,7 @@
 #    By: nchennaf <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/13 17:46:37 by nchennaf          #+#    #+#              #
-#    Updated: 2021/10/27 16:30:36 by nchennaf         ###   ########.fr        #
+#    Updated: 2021/11/05 10:17:39 by nchennaf         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,10 +44,10 @@ SRC = ft_isalpha.c \
 	ft_strtrim.c \
 	ft_split.c \
 	ft_strjoin.c \
-	ft_itoa.c \
 	ft_substr.c \
+	ft_itoa.c \
 	ft_strmapi.c \
-	#ft_striteri.c \ 
+	ft_striteri.c 
 
 OBJ = ${SRC:.c=.o}
 
